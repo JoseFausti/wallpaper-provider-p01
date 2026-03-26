@@ -1,73 +1,139 @@
-# React + TypeScript + Vite
+# 🖼️ Wallpaper Provider
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un **wallpaper provider moderno tipo Unsplash**, optimizado para dispositivos móviles, escritorio y tablets.
+Enfocado en UI/UX, performance visual y consumo eficiente de imágenes desde CDN.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 Tech Stack
 
-## React Compiler
+### Frontend
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* ⚡ Vite
+* ⚛️ React + TypeScript
+* 🎨 Tailwind CSS v4
+* 🎞️ Embla Carousel
 
-## Expanding the ESLint configuration
+### Infraestructura
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* ☁️ Supabase (Storage)
+* 🌐 CDN de imágenes (Cloudinary / Supabase Storage)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 🎯 Objetivo del proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Construir un sistema de visualización y descarga de wallpapers que:
+
+* 📱 Se adapte a múltiples dispositivos
+* 🎨 Ofrezca una experiencia visual moderna
+* ⚡ Consuma imágenes optimizadas desde CDN
+
+---
+
+# ✨ Features actuales
+
+* 🖼️ Grid de wallpapers responsive (masonry layout)
+* 🎞️ Hero con carousel fullscreen
+* 🔍 Modal de preview con:
+
+  * selección de aspect ratio
+  * descarga de imagen
+* 🎨 UI moderna con Tailwind
+
+---
+
+# 🔮 Features futuras
+
+* ⚡ Lazy loading de imágenes
+* ❤️ Favoritos (con auth)
+* 🔎 Filtros por categoría
+* 🎲 Wallpapers random
+* 🧠 Detección automática de dispositivo
+* 📦 API pública
+
+---
+
+# 📁 Estructura del proyecto
+
+```txt
+src/
+ ├─ components/
+ │   ├─ layout/
+ │   ├─ carousel/
+ │   ├─ wallpaper/
+ │
+ ├─ pages/
+ │   ├─ Home.tsx
+ │
+ ├─ hooks/
+ ├─ context/
+ ├─ utils/
+ ├─ types/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# ⚙️ Instalación
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <repo-url>
+cd wallpaper-provider
+
+pnpm install
+pnpm dev
 ```
+
+---
+
+# 🌐 Variables de entorno
+
+Crear archivo `.env`:
+
+```env
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+```
+
+---
+
+# 🖼️ Manejo de imágenes
+
+Las imágenes se almacenan en CDN (no en base de datos).
+
+Se utilizan transformaciones dinámicas como:
+
+* `e_upscale` → mejora de resolución
+* `q_auto` → optimización de calidad
+* `f_auto` → formato automático
+
+---
+
+# 📦 Deploy
+
+### Frontend
+
+* Vercel (recomendado)
+* Netlify
+
+---
+
+# 🧠 Decisiones técnicas
+
+* Uso de CDN para imágenes
+* Arquitectura frontend-first (sin backend por ahora)
+* Enfoque en UI/UX y rendering
+
+---
+
+# 📈 Escalabilidad
+
+* Integración futura con backend (Node + Prisma)
+* Paginación de resultados
+* Optimización de carga de imágenes
+
+---
+
+# 🧑‍💻 Autor
+
+Proyecto desarrollado como práctica de frontend moderno.
