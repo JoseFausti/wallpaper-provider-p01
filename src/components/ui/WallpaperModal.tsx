@@ -58,7 +58,7 @@ const WallpaperModal = ({ wallpaper }: Props) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div className="min-w-[320px] fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         
         <div className="relative w-full max-w-5xl h-[90vh] rounded-2xl overflow-hidden">
 
@@ -91,7 +91,7 @@ const WallpaperModal = ({ wallpaper }: Props) => {
             </div>
 
             {/* RATIOS */}
-            <div className="flex gap-2 overflow-x-auto pb-1">
+            <div className="flex gap-2 flex-wrap pb-1">
                 {Object.keys(ratioMap).map((r) => (
                 <button
                     key={r}
@@ -109,7 +109,7 @@ const WallpaperModal = ({ wallpaper }: Props) => {
             </div>
 
             {/* ACTION BAR */}
-            <div className="flex items-center justify-between bg-black/40 backdrop-blur-xl p-4 rounded-xl">
+            <div className="flex items-center justify-between bg-black/40 backdrop-blur-xl p-2 gap-4 rounded-xl">
                 
                 <div>
                 <p className="text-xs text-white/60">
