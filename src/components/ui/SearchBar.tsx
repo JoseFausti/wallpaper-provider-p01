@@ -40,10 +40,10 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-4 md:flex-row md:items-center md:gap-4">
 
       {/* 🔍 INPUT */}
-      <div className="relative">
+      <div className="relative w-full md:flex-1">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" size={18} />
 
         <input
@@ -57,7 +57,7 @@ const SearchBar = () => {
       </div>
 
       {/* 🏷️ CATEGORÍAS */}
-      <div className="flex gap-2 overflow-x-auto pb-1">
+      <div className="flex flex-wrap gap-2">
         {categories.map((c) => {
           const isActive = cat === c || (c === "all" && !cat);
 
