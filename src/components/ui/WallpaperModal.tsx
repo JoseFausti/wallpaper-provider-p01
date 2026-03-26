@@ -73,7 +73,7 @@ const WallpaperModal = ({ wallpaper }: Props) => {
             {/* 🖼️ IMAGE BACKGROUND */}
             <img
             src={wallpaper.image_url}
-            alt={wallpaper.title}
+            alt={wallpaper.description || "Wallpaper"}
             className="absolute inset-0 w-full h-full object-cover"
             />
 
@@ -86,7 +86,7 @@ const WallpaperModal = ({ wallpaper }: Props) => {
             {/* CONTENIDO */}
             <div className="max-w-2xl">
                 <h2 className="text-xl md:text-2xl font-semibold text-white wrap-break-word">
-                {wallpaper.title}
+                {wallpaper.description || wallpaper.title}
                 </h2>
             </div>
 
