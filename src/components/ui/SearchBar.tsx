@@ -40,7 +40,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4 md:flex-row md:items-center md:gap-4">
+    <div className="w-full flex flex-col gap-4">
 
       {/* 🔍 INPUT */}
       <div className="relative w-full md:flex-1">
